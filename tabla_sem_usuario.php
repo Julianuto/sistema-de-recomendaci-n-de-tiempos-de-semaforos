@@ -18,7 +18,7 @@ else
      <html>
        <head>
        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-           <title>  ITCS Managment </title>
+           <title> ITCS Management </title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 	       <script src="https://code.highcharts.com/highcharts.js"></script>
         </head>
@@ -56,7 +56,7 @@ include "menu_usuario.php";
                     bgcolor="#FFFFFF" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold">
-			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Table of crosses</h1></b></font>
+			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Table of traffic lights</h1></b></font>
 	       </td>
 
 	    </tr>
@@ -82,16 +82,16 @@ include "menu_usuario.php";
                     <?php
                        if ($mensaje == 1)
                          echo "<td bgcolor=#DDFFDD class=_espacio_celdas_p
-                    style=color: #000000; font-weight: bold >crossing updated successfully.";
+                    style=color: #000000; font-weight: bold >Traffic light crossing updated correctly.";
                        if ($mensaje == 2)
                          echo "<td bgcolor=#FFDDDD class=_espacio_celdas_p
-                    style=color: #000000; font-weight: bold >The crossing was not updated correctly.";
+                    style=color: #000000; font-weight: bold >The signalized crossing was not updated correctly.";
                        if ($mensaje == 3)
                          echo "<td bgcolor=#DDFFDD class=_espacio_celdas_p
-                    style=color: #000000; font-weight: bold >The crossing created correctly.";
+                    style=color: #000000; font-weight: bold >The traffic light crossing was created successfully.";
                        if ($mensaje == 4)
                          echo "<td bgcolor=#FFDDDD class=_espacio_celdas_p
-                    style=color: #000000; font-weight: bold >The crossing was not created. An issue occurred";
+                    style=color: #000000; font-weight: bold >The signalized crossing was not created. An issue occurred.";
                        if ($mensaje == 5)
                          echo "<td bgcolor=#FFDDDD class=_espacio_celdas_p
                     style=color: #000000; font-weight: bold >The crossing was not created. There is already a cross with the same id.";
@@ -128,7 +128,7 @@ include "menu_usuario.php";
               &nbsp;</b></font>
               </td>
               <td bgcolor="#F4B120" align=center>     <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-                Long tail parameter (number of vehicles) </b></font>
+               Long queue parameter (number of vehicles) </b></font>
               </td>
               <td bgcolor="#F4B120" align=center>    <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -141,10 +141,10 @@ include "menu_usuario.php";
       <table width=80% border=0 align=center>
       <tr>
         <td bgcolor="#F4B120" align=center>  <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				  Name</b></font>
+				  Nombre</b></font>
 				</td>
 				<td bgcolor="#F4B120" align=center>  <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-        Counting periodicity (Sec)</b></font>
+        Count Periodicity (Seconds)</b></font>
 				</td>
         <td bgcolor="#F4B120" align=center>  <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
 				 plan</b></font>

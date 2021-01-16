@@ -19,7 +19,7 @@ else
      <html>
        <head>
           <link rel="stylesheet" href="css/estilos_virtual.css" 			type="text/css">
-           <title>Gestion cruce</title>
+           <title>Crossing management</title>
         </head>
        <body>
         <table width="100%" align=center cellpadding=5 border=0 bgcolor="#2E4053">
@@ -32,15 +32,15 @@ else
 
              	    </td>
                   <td valign="bottom" align=center width=60%>
-                     <h1><font color=#FFFFFF face="Century Gothic">SISTEMA DE CONTROL DE TRÁFICO INTELIGENTE</font></h1>
+                     <h1><font color=#FFFFFF face="Century Gothic">INTELLIGENT TRAFFIC CONTROL SYSTEM</font></h1>
              	    </td>
            	    </tr>
          	    </table>
            </td>
            <td valign="top" align=right >
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Nombre Usuario</u>:   ".$_SESSION["nombre"];?> </b></font><br>
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Tipo Usuario</u>:   ".$desc_tipo_usuario;?> </b></font><br>
-              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Cerrar Sesion </a></b></font></button>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Username</u>:   ".$_SESSION["nombre"];?> </b></font><br>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "User type</u>:   ".$desc_tipo_usuario;?> </b></font><br>
+              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Logout </a></b></font></button>
            </td>
 	     </tr>
 <table width="100%" align=center cellpadding=5 border=0 bgcolor="#FFFFFF">
@@ -84,7 +84,7 @@ include "menu_usuario.php";
                     bgcolor="#FFFFFF" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold">
-			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Información del plan actual</h1></b></font>
+			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Current plan information</h1></b></font>
 		       </td>
 
        </tr>
@@ -99,7 +99,7 @@ include "menu_usuario.php";
                    <table width=50% border=0 align=center>
 			    <tr>
 				<td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Plan actual</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Current plan</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
 				  <input type="text" name=nombre value="<?php echo $plan; ?>" readonly="readonly" required>
@@ -107,7 +107,7 @@ include "menu_usuario.php";
 	     </tr>
           <tr>
 				<td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Este Oeste</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>East West</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
 				  <input type="text" name=direccion value="<?php echo $ew; ?>" readonly="readonly" required>
@@ -116,7 +116,7 @@ include "menu_usuario.php";
 
 	     <tr>
 				<td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Sur Norte</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>South North</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
 				  <input type="text" name=tiempo value="<?php echo $sn; ?>" readonly="readonly" required>
@@ -124,14 +124,14 @@ include "menu_usuario.php";
 	     </tr>
          <tr>
 				<td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Oeste Este</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>West East</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
 				  <input type="text" name=plan value="<?php echo $we; ?>" readonly="readonly" required>
 				</td>
 	     </tr>
        <td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Norte Sur</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>North South</b></font>
 				</td>
                 <td bgcolor="#EEEEEE" align=center>
 				  <input type="text" name=plan value="<?php echo $ns; ?>" readonly="readonly" required>

@@ -19,7 +19,7 @@ else
      <html>
        <head>
           <link rel="stylesheet" href="css/estilos_virtual.css" 			type="text/css">
-           <title>Gestion cruce</title>
+           <title>Crossing management</title>
         </head>
        <body>
         <table width="100%" align=center cellpadding=5 border=0 bgcolor="#2E4053">
@@ -32,15 +32,15 @@ else
 
              	    </td>
                   <td valign="bottom" align=center width=60%>
-                     <h1><font color=#FFFFFF face="Century Gothic">SISTEMA DE CONTROL DE TRÁFICO INTELIGENTE</font></h1>
+                     <h1><font color=#FFFFFF face="Century Gothic">INTELLIGENT TRAFFIC CONTROL SYSTEM</font></h1>
              	    </td>
            	    </tr>
          	    </table>
            </td>
            <td valign="top" align=right >
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Nombre Usuario</u>:   ".$_SESSION["nombre"];?> </b></font><br>
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Tipo Usuario</u>:   ".$desc_tipo_usuario;?> </b></font><br>
-              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Cerrar Sesion </a></b></font></button>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Username</u>:   ".$_SESSION["nombre"];?> </b></font><br>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "User type</u>:   ".$desc_tipo_usuario;?> </b></font><br>
+              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Logout </a></b></font></button>
 
            </td>
 	     </tr>
@@ -102,7 +102,7 @@ else
                     bgcolor="#FFFFFF" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold">
-			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Agregar usuario</h1></b></font>
+			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Add user</h1></b></font>
 		       </td>
 
     </tr>
@@ -117,17 +117,17 @@ else
           <table width=50% border=0 align=center>
           <tr>
 				<td bgcolor="#2E4053" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Tipo Usuario</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>User Type</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
           <select name=tipo_usu required>   
-            <option value="2"> Operador</option>  
-            <option value="1"> Administrador</option>
+            <option value="2"> Operator</option>  
+            <option value="1"> Administrator</option>
           </select>
 				</td>	
 	     </tr>
 				<td bgcolor="#2E4053" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Nombre</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Name</b></font>
 				</td>	
 				<td bgcolor="#EEEEEE" align=center> 
 				  <input type="text" name=nombre value="" required>
@@ -135,7 +135,7 @@ else
        </tr>
          <tr>
 				<td bgcolor="#2E4053" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Apellido</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Last name</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
 				  <input type="text" name=apellido value="" required>
@@ -143,7 +143,7 @@ else
 			     </tr>
 	     <tr>
 				<td bgcolor="#2E4053" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Numero ID</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>ID number</b></font>
 				</td> 	
 				<td bgcolor="#EEEEEE" align=center> 
 				  <input type="number" name=num_id value="" required>  
@@ -152,7 +152,7 @@ else
 
 	     <tr>
 				<td bgcolor="#2E4053" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Usuario</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Username</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center> 
 				  <input type="text" name=login value="" required>  
@@ -161,7 +161,7 @@ else
 
 	     <tr>
 				<td bgcolor="#2E4053" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Clave</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Password</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center> 
 				  <input type="password" name=password value="" required>  
@@ -170,12 +170,12 @@ else
 
 	     <tr>
 				<td bgcolor="#2E4053" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Activo (S/N)</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b>Active (Y/N)</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
           <select name=activo required> 
-            <option value="1"> S (Activo)</option>  
-            <option value="0"> N (Inactivo)</option>  
+            <option value="1"> Y (Active)</option>  
+            <option value="0"> N (Inactive)</option>  
           </select>
 				</td>	
 	     </tr>
@@ -183,12 +183,12 @@ else
          <table width=50% align=center border=0>
            <tr>
              <td width=50%></td>
-             <td align=center><input type=submit color= blue value="Grabar" name="Modificar">
+             <td align=center><input type=submit color= blue value="Modify" name="Modificar">
                   </form>
              </td>
              <td align=left>
                   <form method=POST action="gestion_usuarios_add.php">
-                  <input  type=submit color= blue value="Volver" name="Volver">
+                  <input  type=submit color= blue value="Return" name="Volver">
                   </form>
              </td>
            </tr>

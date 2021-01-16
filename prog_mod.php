@@ -18,7 +18,7 @@ else
      <html>
        <head>
        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-           <title>  Administracion SCTI </title>
+           <title> ITCS Management </title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 	       <script src="https://code.highcharts.com/highcharts.js"></script>
          <style>
@@ -45,15 +45,15 @@ else
 
              	    </td>
                   <td valign="bottom" align=center width=60%>
-                     <h1><font color=#FFFFFF face="Century Gothic">SISTEMA DE CONTROL DE TRÁFICO INTELIGENTE</font></h1>
+                     <h1><font color=#FFFFFF face="Century Gothic">INTELLIGENT TRAFFIC CONTROL SYSTEM</font></h1>
              	    </td>
            	    </tr>
          	    </table>
            </td>
            <td valign="top" align=right >
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Nombre Usuario</u>:   ".$_SESSION["nombre"];?> </b></font><br>
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Tipo Usuario</u>:   ".$desc_tipo_usuario;?> </b></font><br>
-              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Cerrar Sesion </a></b></font></button>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Username</u>:   ".$_SESSION["nombre"];?> </b></font><br>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "User type</u>:   ".$desc_tipo_usuario;?> </b></font><br>
+              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Logout </a></b></font></button>
 
            </td>
 	     </tr>
@@ -68,7 +68,7 @@ include "menu_usuario.php";
                     bgcolor="#FFFFFF" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold">
-			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Ubicacion de semaforo</h1></b></font>
+			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Traffic light location</h1></b></font>
 
 
 		       </td>
@@ -77,7 +77,7 @@ include "menu_usuario.php";
 	  </table>
   <?php
 $id_cruce_enc= $_GET["id_cruce"];
-$sqlubi = "SELECT * from cruce where id='$id_cruce_enc'"; //CONSULTA LA ULTIMA UBICACION AGREGADA A LA TABLA UBICACIONES
+$sqlubi = "SELECT * from cruce where id='$id_cruce_enc'"; //SEE THE LAST LOCATION ADDED TO THE LOCATIONS TABLE
 $resultubi = pg_query($conectar, $sqlubi);
 $rowubi = pg_fetch_array($resultubi);
 $latitud = $rowubi[5];
@@ -86,33 +86,24 @@ $longitud = $rowubi[6];
 ?>
   
   <form method="POST" action="prog_Loc_mod.php?id_cruce=<?php echo $id_cruce_enc;?>">
-  <font FACE="Century Gothic" SIZE=2 color="#000044" > <b>El marcador muestra la posicion actual del parqueadero, arratrelo hasta una nueva ubicacion</b></font>
+  <font FACE="Century Gothic" SIZE=2 color="#000044" > <b>The marker shows the current position of the parking lot, drag it to a new location</b></font>
    <br>
     <input type="text" id="coords" value="<?php echo $latitud?> , <?php echo $longitud?>" name="coordena" />
-    <input type="submit" value="Actualizar"/>
+    <input type="submit" value="Update"/>
   </form>
   <div id="map"></div>
     <script>
 
 
-var marker;          //variable del marcador
-var coords = {};    //coordenadas obtenidas con la geolocalizaci�n
+var marker;          //marker variable
+var coords = {};    //coordinates obtained with geolocation
 
-//Funcion principal
+//Main Function
 initMap = function () 
 {
 
-    //usamos la API para geolocalizar el usuario
-
-// Cuando no funcione geolocalizaci�n, se comentan las siguientes lineas y se asigna coordenadas fijas
-// Si funciona la geolocalizaci�n, se pueden descomentar las l�neas y utilizarla, sin asignar coordenadas fijas
-//        navigator.geolocation.getCurrentPosition(
-//          function (position){
-//            coords =  {
-//              lng: position.coords.longitude,
-//              lat: position.coords.latitude
-//            };
-//            setMapa(coords);  //pasamos las coordenadas al metodo para crear el mapa
+    //we use the API to geolocate the user
+//            setMapa(coords);  //we pass the coordinates to the method to create the map
           var latit= <?php echo $latitud ?>;
           var longi= <?php echo $longitud ?>;
           var uluru = {lat: latit, lng: longi};
@@ -126,7 +117,7 @@ initMap = function ()
 
 function setMapa (coords)
 {   
-      //Se crea una nueva instancia del objeto mapa
+      //A new instance of the map object is created
       var map = new google.maps.Map(document.getElementById('map'),
       {
         zoom: 15,
@@ -134,9 +125,9 @@ function setMapa (coords)
 
       });
 
-      //Creamos el marcador en el mapa con sus propiedades
-      //para nuestro obetivo tenemos que poner el atributo draggable en true
-      //position pondremos las mismas coordenas que obtuvimos en la geolocalizaci�n
+      // We create the marker on the map with its properties
+       // for our objective we have to set the draggable attribute to true
+       // position we will put the same coordinates that we obtained in the geolocation
       marker = new google.maps.Marker({
         map: map,
         draggable: true,
@@ -144,18 +135,18 @@ function setMapa (coords)
         position: new google.maps.LatLng(coords.lat,coords.lng),
 
       });
-      //agregamos un evento al marcador junto con la funcion callback al igual que el evento dragend que indica 
-      //cuando el usuario a soltado el marcador
+      // we add an event to the marker together with the callback function as well as the dragend event that indicates
+       // when the user has dropped the marker
       marker.addListener('click', toggleBounce);
       
       marker.addListener( 'dragend', function (event)
       {
-        //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
+        // we write the coordinates of the current position of the marker inside the input #coords
         document.getElementById("coords").value = this.getPosition().lat()+","+ this.getPosition().lng();
       });
 }
 
-//callback al hacer clic en el marcador lo que hace es quitar y poner la animacion BOUNCE
+// callback when clicking on the marker what it does is remove and put the BOUNCE animation
 function toggleBounce() {
   if (marker.getAnimation() !== null) {
     marker.setAnimation(null);
@@ -164,11 +155,10 @@ function toggleBounce() {
   }
 }
 
-// Carga de la libreria de google maps 
 
     </script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYfauZqaXuEdb2Kfog5IuKDh-pB5U6BVM&callback=initMap"></script> <!-- Se deben reemplazar las XXXX por la API Key de Google MAPS -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYfauZqaXuEdb2Kfog5IuKDh-pB5U6BVM&callback=initMap"></script> 
   
 
   </body>

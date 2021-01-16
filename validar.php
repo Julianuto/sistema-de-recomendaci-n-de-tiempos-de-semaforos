@@ -1,7 +1,7 @@
                                                        
 <?php
 
-// PROGRAMA DE VALIDACION DE USUARIOS
+// USER VALIDATION PROGRAM
                                                             
 $login = $_POST["login1"];
 $passwd = $_POST["passwd1"];

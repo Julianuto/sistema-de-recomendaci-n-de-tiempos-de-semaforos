@@ -18,7 +18,7 @@ else
      <html>
        <head>
        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-           <title>  Administracion SCTI </title>
+           <title>  ITCS Managment </title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 	       <script src="https://code.highcharts.com/highcharts.js"></script>
         </head>
@@ -33,15 +33,15 @@ else
 
              	    </td>
                   <td valign="bottom" align=center width=60%>
-                     <h1><font color=#FFFFFF face="Century Gothic">SISTEMA DE CONTROL DE TRÁFICO INTELIGENTE</font></h1>
+                     <h1><font color=#FFFFFF face="Century Gothic">INTELLIGENT TRAFFIC CONTROL SYSTEM</font></h1>
              	    </td>
            	    </tr>
          	    </table>
            </td>
            <td valign="top" align=right >
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Nombre Usuario</u>:   ".$_SESSION["nombre"];?> </b></font><br>
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Tipo Usuario</u>:   ".$desc_tipo_usuario;?> </b></font><br>
-              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Cerrar Sesion </a></b></font></button>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Username</u>:   ".$_SESSION["nombre"];?> </b></font><br>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "User type</u>:   ".$desc_tipo_usuario;?> </b></font><br>
+              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Logout </a></b></font></button>
 
            </td>
 	     </tr>
@@ -71,7 +71,7 @@ if ((isset($_POST["enviado"])))
                     bgcolor="#FFFFFF" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold">
-			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Recomendación de tiempo</h1></b></font>
+			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Time recommendation</h1></b></font>
 	       </td>
 
 	    </tr>
@@ -97,10 +97,10 @@ if ((isset($_POST["enviado"])))
                     <?php
                        if ($mensaje == 1)
                          echo "<td bgcolor=#DDFFDD class=_espacio_celdas_p
-                    style=color: #000000; font-weight: bold >Cruce actualizado correctamente.";
+                    style=color: #000000; font-weight: bold >Crossing updated successfully.";
                        if ($mensaje == 2)
                          echo "<td bgcolor=#FFDDDD class=_espacio_celdas_p
-                    style=color: #000000; font-weight: bold >El cruce no fue actualizado correctamente.";
+                    style=color: #000000; font-weight: bold >The Crossing was not updated correctly.";
 
              echo "</td></tr>
                   </table>
@@ -132,7 +132,7 @@ if ((isset($_POST["enviado"])))
               </b></font>
               </td>
               <td bgcolor="#F4B120" align=center>     <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parametro cola larga (numero vehiculos)
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Long tail parameter (number of vehicles)
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b></font>
               </td>
               <td bgcolor="#F4B120" align=center>    <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
@@ -147,28 +147,28 @@ if ((isset($_POST["enviado"])))
       <table width=80% border=0 align=center>
       <tr>
         <td bgcolor="#F4B120" align=center>  <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				  Nombre</b></font>
+				  Name</b></font>
 				</td>
 				<td bgcolor="#F4B120" align=center>  <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-          Periodicidad conteo (Seg)</b></font>
+          Counting periodicity (Sec)</b></font>
 				</td>
         <td bgcolor="#F4B120" align=center>  <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
 				 plan</b></font>
 				</td>
 				<td bgcolor="#F4B120" align=center>     <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				  este oeste</b></font>
+				  East West</b></font>
 				</td>
         <td bgcolor="#F4B120" align=center>     <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				  sur norte</b></font>
+				  South North</b></font>
 				</td>
         <td bgcolor="#F4B120" align=center>     <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				  oeste este</b></font>
+				  West East</b></font>
 				</td>
 				<td bgcolor="#F4B120" align=center>    <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				 norte sur</b></font>
+				 North South</b></font>
 				</td>
         <td bgcolor="#F4B120" align=center>    <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				 Recomendacion</b></font>
+				 Recommendation</b></font>
 				</td>
 			</tr>
            
@@ -232,6 +232,6 @@ if ((isset($_POST["enviado"])))
 <script type="text/javascript">
     function carga()
     {
-        alert("Ejecutando recomendación \n Espere un momento");
+        alert("Running recommendation \n Wait a moment");
     }
 </script>

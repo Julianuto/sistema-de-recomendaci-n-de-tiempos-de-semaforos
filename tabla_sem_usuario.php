@@ -18,7 +18,7 @@ else
      <html>
        <head>
        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-           <title>  Administracion SCTI </title>
+           <title>  ITCS Managment </title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 	       <script src="https://code.highcharts.com/highcharts.js"></script>
         </head>
@@ -33,15 +33,15 @@ else
 
              	    </td>
                   <td valign="bottom" align=center width=60%>
-                     <h1><font color=#FFFFFF face="Century Gothic">SISTEMA DE CONTROL DE TRÁFICO INTELIGENTE</font></h1>
+                     <h1><font color=#FFFFFF face="Century Gothic">INTELLIGENT TRAFFIC CONTROL SYSTEM</font></h1>
              	    </td>
            	    </tr>
          	    </table>
            </td>
            <td valign="top" align=right >
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Nombre Usuario</u>:   ".$_SESSION["nombre"];?> </b></font><br>
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Tipo Usuario</u>:   ".$desc_tipo_usuario;?> </b></font><br>
-              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Cerrar Sesion </a></b></font></button>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Username</u>:   ".$_SESSION["nombre"];?> </b></font><br>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "User type</u>:   ".$desc_tipo_usuario;?> </b></font><br>
+              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Logout </a></b></font></button>
 
            </td>
 	     </tr>
@@ -56,7 +56,7 @@ include "menu_usuario.php";
                     bgcolor="#FFFFFF" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold">
-			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Tabla de cruces</h1></b></font>
+			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Table of crosses</h1></b></font>
 	       </td>
 
 	    </tr>
@@ -82,19 +82,19 @@ include "menu_usuario.php";
                     <?php
                        if ($mensaje == 1)
                          echo "<td bgcolor=#DDFFDD class=_espacio_celdas_p
-                    style=color: #000000; font-weight: bold >Cruce actualizado correctamente.";
+                    style=color: #000000; font-weight: bold >crossing updated successfully.";
                        if ($mensaje == 2)
                          echo "<td bgcolor=#FFDDDD class=_espacio_celdas_p
-                    style=color: #000000; font-weight: bold >El cruce no fue actualizado correctamente.";
+                    style=color: #000000; font-weight: bold >The crossing was not updated correctly.";
                        if ($mensaje == 3)
                          echo "<td bgcolor=#DDFFDD class=_espacio_celdas_p
-                    style=color: #000000; font-weight: bold >El cruce creado correctamente.";
+                    style=color: #000000; font-weight: bold >The crossing created correctly.";
                        if ($mensaje == 4)
                          echo "<td bgcolor=#FFDDDD class=_espacio_celdas_p
-                    style=color: #000000; font-weight: bold >El cruce no fue creado. Se present� un inconveniente";
+                    style=color: #000000; font-weight: bold >The crossing was not created. An issue occurred";
                        if ($mensaje == 5)
                          echo "<td bgcolor=#FFDDDD class=_espacio_celdas_p
-                    style=color: #000000; font-weight: bold >El cruce no fue creado. Ya existe un cruce con la misma id.";
+                    style=color: #000000; font-weight: bold >The crossing was not created. There is already a cross with the same id.";
 
              echo "</td></tr>
                   </table>
@@ -128,7 +128,7 @@ include "menu_usuario.php";
               &nbsp;</b></font>
               </td>
               <td bgcolor="#F4B120" align=center>     <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-                Parametro cola larga (numero vehiculos) </b></font>
+                Long tail parameter (number of vehicles) </b></font>
               </td>
               <td bgcolor="#F4B120" align=center>    <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -141,34 +141,34 @@ include "menu_usuario.php";
       <table width=80% border=0 align=center>
       <tr>
         <td bgcolor="#F4B120" align=center>  <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				  Nombre</b></font>
+				  Name</b></font>
 				</td>
 				<td bgcolor="#F4B120" align=center>  <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-        Periodicidad conteo (Seg)</b></font>
+        Counting periodicity (Sec)</b></font>
 				</td>
         <td bgcolor="#F4B120" align=center>  <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
 				 plan</b></font>
 				</td>
 				<td bgcolor="#F4B120" align=center>  <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				  Ubicacion</b></font>
+				  Location</b></font>
 				</td>
    	    <td bgcolor="#F4B120" align=center>    <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				 Localizar</b></font>
+				 To locate</b></font>
 				</td>
 				<td bgcolor="#F4B120" align=center>     <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				  este oeste</b></font>
+				  East West</b></font>
 				</td>
         <td bgcolor="#F4B120" align=center>     <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				  sur norte</b></font>
+				  South North</b></font>
 				</td>
         <td bgcolor="#F4B120" align=center>     <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				  oeste este</b></font>
+				  West East</b></font>
 				</td>
 				<td bgcolor="#F4B120" align=center>    <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				 norte sur</b></font>
+				 North South</b></font>
 				</td>
         <td bgcolor="#F4B120" align=center>    <font FACE="Century Gothic" SIZE=2 color="#000000"><b>
-				 Modificar</b></font>
+				 Modify</b></font>
 				</td>
 			</tr>
            

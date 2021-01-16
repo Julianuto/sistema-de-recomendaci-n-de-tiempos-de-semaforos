@@ -2,7 +2,7 @@
   <html>
     <head>
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-      <title> Administracion SCTI</title>
+      <title> ITCS Managment </title>
       <meta http-equiv="refresh" content="15" />
     </head>
     <body>
@@ -14,7 +14,7 @@
          </td>
          <td valign="top" align=center width=30% bgcolor="#2E4053">
           &nbsp &nbsp
-           <h2> <font color=white face="Century Gothic">Inicio de sesion </font></h2>
+           <h2> <font color=white face="Century Gothic">Login </font></h2>
             <form method="POST" action="validar.php">
               <table width="100%" align=center border=0 bgcolor="#2E4053" valign=center>
   	            <tr>
@@ -57,7 +57,7 @@
                     bgcolor="#2E4053" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold; font-family:Century Gothic"" >
-                   <input type=submit value="Entrar" name="Enviar">
+                   <input type=submit value="Get in" name="Enviar">
                    </td>
 
                 </tr>
@@ -83,13 +83,13 @@
 			             font-weight: bold">
                     <?php 
                        if ($mensaje == 1)
-                         echo "El password del usuario no coincide.";
+                         echo "The user's password does not match.";
                        if ($mensaje == 2)
-                         echo "No hay usuarios con el login (usuario) ingresado o esta inactivo.";
+                         echo "There are no users with the login (user) entered or it is inactive.";
                        if ($mensaje == 3)
-                         echo "No se ha logueado en el Sistema. Por favor ingrese los datos.";
+                         echo "You have not logged into the System. Please enter the data.";
                        if ($mensaje == 4)
-                         echo "Su tipo de usuario, no tiene las credenciales suficientes para ingresar a esta opcion.";
+                         echo "Your type of user does not have sufficient credentials to enter this option.";
                     ?>                         
                   </td>
                 </tr>  
@@ -103,7 +103,7 @@
  	     </tr>  </table><table width="80%" align=center cellpadding=5 border=0 bgcolor="#FFFFFF">
  	     <tr>
          <td valign="top" align=center width=80& colspan=2 bgcolor="#FFC300">
-           <h1> <font color=white face="Century Gothic">SISTEMA DE CONTROL DE TRÁFICO INTELIGENTE</font></h1>
+           <h1> <font color=white face="Century Gothic">INTELLIGENT TRAFFIC CONTROL SYSTEM</font></h1>
          </td>
        </tr> </table>       <table width="80%" align=center cellpadding=5 border=0 bgcolor="#FFFFFF">
  	     <tr>
@@ -111,8 +111,8 @@
            <img src="../img/ppal.jpg" border=0 width=600 height=350>
          </td>
          <td align=center bgcolor="#2E4053">
-            <b> <font color=white face="Century Gothic">Descripción</font>  </b>
-            <p align="justify"> <font color=white face="Century Gothic">Sistema de Control de Tráfico Inteligente (SCTI), enfocado en la recomendación de tiempos de las luces de los semáforos en los cruces de las vías, que cumpla con estándares de ITS para garantizar la interoperabilidad con servicios de movilidad relacionados.</font></p>
+            <b> <font color=white face="Century Gothic">Description</font>  </b>
+            <p align="justify"> <font color=white face="Century Gothic">Intelligent Traffic Control System (ITCS), focused on recommending the times of traffic lights at road junctions, complying with ITS standards to guarantee interoperability with related mobility services.</font></p>
          </td>
  	     </tr>
 

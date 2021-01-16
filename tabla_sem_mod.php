@@ -19,7 +19,7 @@ else
      <html>
        <head>
           <link rel="stylesheet" href="css/estilos_virtual.css" 			type="text/css">
-           <title>Gestion cruce</title>
+           <title>Crossing management</title>
         </head>
        <body>
         <table width="100%" align=center cellpadding=5 border=0 bgcolor="#2E4053">
@@ -32,15 +32,15 @@ else
 
              	    </td>
                   <td valign="bottom" align=center width=60%>
-                     <h1><font color=#FFFFFF face="Century Gothic">SISTEMA DE CONTROL DE TRÁFICO INTELIGENTE</font></h1>
+                     <h1><font color=#FFFFFF face="Century Gothic">INTELLIGENT TRAFFIC CONTROL SYSTEM</font></h1>
              	    </td>
            	    </tr>
          	    </table>
            </td>
            <td valign="top" align=right >
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Nombre Usuario</u>:   ".$_SESSION["nombre"];?> </b></font><br>
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Tipo Usuario</u>:   ".$desc_tipo_usuario;?> </b></font><br>
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Cerrar Sesion </a></b></font>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Username</u>:   ".$_SESSION["nombre"];?> </b></font><br>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "User type</u>:   ".$desc_tipo_usuario;?> </b></font><br>
+              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Logout </a></b></font></button>
 
            </td>
 	     </tr>
@@ -50,7 +50,6 @@ include "menu_usuario.php";
 
 if ((isset($_POST["enviado"])))
   {
-   //echo "grabar cambios modificaci�n";
    $id_cruce_enc = $_POST["id_cruce"];
    $nombre= $_POST["nombre"];
    $tiempo = $_POST["tiempo"];
@@ -83,7 +82,7 @@ if ((isset($_POST["enviado"])))
 else
 
 {
-// Consulta el nombre y dem�s datos del usuario a modificar
+// Check the name and other data of the user to modify
    $id_cruce_enc = $_GET["id_cruce"];
    $sqlenc = "SELECT * from cruce";
    $resultenc = pg_query($conectar, $sqlenc);
@@ -112,7 +111,7 @@ else
                     bgcolor="#FFFFFF" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold">
-			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Modificacion cruce</h1></b></font>
+			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Crossing modification</h1></b></font>
 
 
 		       </td>
@@ -128,7 +127,7 @@ else
         <table width=50% border=0 align=center>
 			    <tr>
 				<td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Nombre</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Name</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
 				  <input type="text" name=nombre value="<?php echo $nombre; ?>" required>
@@ -136,7 +135,7 @@ else
 	     </tr>
           <tr>
 				<td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Ubicacion</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Location</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
 				  <input type="text" name=direccion value="<?php echo $ubicacion; ?>" required>
@@ -145,7 +144,7 @@ else
 
 	     <tr>
 				<td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Periodicidad conteo (Seg)</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Counting periodicity (Sec)</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
 				  <input type="number" name=tiempo value="<?php echo $tiempo; ?>" required>
@@ -153,35 +152,35 @@ else
 	     </tr>
          <tr>
 				<td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Plan semaforos</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Traffic lights plan</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
 				  <input type="text" name=plan value="<?php echo $plan; ?>" readonly="readonly" required>
 				</td>
 	     </tr>
        <td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Parametro cola larga (numero vehiculos)</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Long queue parameter (number of vehicles)</b></font>
 				</td>
         
         <td bgcolor="#EEEEEE" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Este oeste</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>East West</b></font>
 				  <input size=3 type="number" name=ew value="<?php echo $ew; ?>" required>
           <br>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Sur norte</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>South North</b></font>
 				  <input size=3 type="number" name=sn value="<?php echo $sn; ?>" required>
 				<br>
         
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Oeste este</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>West East</b></font>
 				  <input size=3 type="number" name=we value="<?php echo $we; ?>" required>
         <br>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Norte sur</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>North South</b></font>
 				  <input size=3 type="number" name=ns value="<?php echo $ns; ?>" required>
 
 	     </tr>
        
 	     <tr>
 				<td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Ubicación</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Location</b></font>
 				</td>
             	<td bgcolor="#EEEEEE" align=center>
             	  <font FACE="Century Gothic" SIZE=2 color="#000000"> <a href="prog_mod.php?id_cruce=<?php echo $id_cruce_enc; ?>"> <img src="../img/ayuda.png" border=0 width=20 height=20></a></font>
@@ -199,12 +198,12 @@ else
          <table width=50% align=center border=0>
            <tr>
              <td width=50%></td>
-             <td align=center><input type=submit color= blue value="Modificar" name="Modificar">
+             <td align=center><input type=submit color= blue value="Modify" name="Modificar">
                   </form>
              </td>
              <td align=left>
                   <form method=POST action="tabla_sem_usuario.php">
-                  <input type=submit color= blue value="Volver" name="Volver">
+                  <input type=submit color= blue value="Return" name="Volver">
                   </form>
              </td>
            </tr>
@@ -222,9 +221,9 @@ else
             <tr>
             <?php
             if ($mensaje == 1)
-                echo "<td bgcolor=#94DA60 class=_espacio_celdas_pstyle=color: #000000; font-weight: bold >Ubicacion creada correctamente.";
+                echo "<td bgcolor=#94DA60 class=_espacio_celdas_pstyle=color: #000000; font-weight: bold >Location created successfully.";
             if ($mensaje == 2)
-                echo "<td bgcolor=#DC756C class=_espacio_celdas_pstyle=color: #000000; font-weight: bold >Inconveniente al crear la ubicacion.";
+                echo "<td bgcolor=#DC756C class=_espacio_celdas_pstyle=color: #000000; font-weight: bold >Disadvantage when creating the location.";
             echo "</td></tr></table>
             </td>
     		</tr>

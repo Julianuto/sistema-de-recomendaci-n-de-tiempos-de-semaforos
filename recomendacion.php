@@ -18,7 +18,7 @@ else
      <html>
        <head>
        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-           <title>  Administracion SCTI </title>
+           <title> ITCS Managment </title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 	       <script src="https://code.highcharts.com/highcharts.js"></script>
         </head>
@@ -33,15 +33,15 @@ else
 
              	    </td>
                   <td valign="bottom" align=center width=60%>
-                     <h1><font color=#FFFFFF face="Century Gothic">SISTEMA DE CONTROL DE TRÁFICO INTELIGENTE</font></h1>
+                     <h1><font color=#FFFFFF face="Century Gothic">INTELLIGENT TRAFFIC CONTROL SYSTEM</font></h1>
              	    </td>
            	    </tr>
          	    </table>
            </td>
            <td valign="top" align=right >
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Nombre Usuario</u>:   ".$_SESSION["nombre"];?> </b></font><br>
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Tipo Usuario</u>:   ".$desc_tipo_usuario;?> </b></font><br>
-              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Cerrar Sesion </a></b></font></button>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Username</u>:   ".$_SESSION["nombre"];?> </b></font><br>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "User type</u>:   ".$desc_tipo_usuario;?> </b></font><br>
+              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Logout </a></b></font></button>
 
            </td>
 	     </tr>
@@ -56,7 +56,7 @@ include "menu_usuario.php";
                     bgcolor="#FFFFFF" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold">
-			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Recomendación de tiempos</h1></b></font>
+			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Time recommendation</h1></b></font>
 	       </td>
 
 	    </tr>

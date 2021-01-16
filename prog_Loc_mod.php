@@ -1,17 +1,17 @@
 <?php
-include "conectar.php";  // Conexi�n tiene la informaci�n sobre la conexi�n de la base de datos.
+include "conectar.php";  // Connection has the information about the database connection.
 
-$coordena = $_POST["coordena"]; // toma los valores de coordenada
-// que trae la latitud y longitud en la misma variable
+$coordena = $_POST["coordena"]; // take the coordinate values
+// which brings the latitude and longitude in the same variable
 
-// Y se separan en dos variables, Latitud y longitud, para poder ingresarlas a la tabla ubicaciones de la base de datos.
+// And they are separated into two variables, Latitude and Longitude, to be able to enter them into the locations table of the database.
 $id_cruce_enc= $_GET["id_cruce"];
-$ubicacion_coma= strpos($coordena,","); // Ubica la posici�n del caracter coma en la variable.
+$ubicacion_coma= strpos($coordena,","); // Place the position of the comma character in the variable.
 $ubicacion_coma2 = $ubicacion_coma +1;
-$largo_cad = strlen($coordena); // determina el largo de toda la cadena.
+$largo_cad = strlen($coordena); // determines the length of the entire string.
 $largo_lat = $largo_cad - $ubicacion_coma; 
-$latitud = substr($coordena,0,$ubicacion_coma); // asigna la subcadena de coordenada que le corresponde a la latitud.
-$longitud = substr($coordena,$ubicacion_coma2,$largo_lat); // asigna la subcadena de coordenada que le corresponde a la longitud.
+$latitud = substr($coordena,0,$ubicacion_coma); // assigns the coordinate substring that corresponds to the latitude.
+$longitud = substr($coordena,$ubicacion_coma2,$largo_lat); // assigns the coordinate substring that corresponds to the length.
 
 echo "lat...".$latitud;
 echo "long...".$longitud;

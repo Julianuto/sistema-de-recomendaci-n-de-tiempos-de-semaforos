@@ -246,7 +246,7 @@ else
          <table width=50% align=center border=0>
            <tr>  
              <td width=50%></td>                                                                       
-             <td align=center><font face="Century Gothic"><input style="background-color: #DBA926" type=submit color= blue value="Modificar" name="Modificar">
+             <td align=center><font face="Century Gothic"><input style="background-color: #DBA926" type=submit color= blue value="Modify" name="Modificar">
                   </font></form>
              </td>  
            </tr>

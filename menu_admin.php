@@ -7,7 +7,7 @@ echo '
                     bgcolor="#2E4053" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold">
-            	     <a href="gestion_usuarios.php"><img src="../img/man.png" border=0 width=40 height=40></a>
+            	   <a href="gestion_usuarios.php"><img src="../img/man.png" border=0 width=40 height=40></a>
                    <a href="tabla_sem_admin.php"><img src="../img/semaforo.png" border=0 width=40 height=40></a>
                    <a href="colas_admin.php"><img src="../img/carro.png" border=0 width=40 height=40></a>
                 

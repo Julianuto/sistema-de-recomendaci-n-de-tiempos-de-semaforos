@@ -20,7 +20,7 @@ else
      <html>
        <head>
           <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-           <title> Administracion SCTI </title>
+           <title> Management ITCS </title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 	       <script src="https://code.highcharts.com/highcharts.js"></script>
         </head>
@@ -35,15 +35,15 @@ else
 
              	    </td>
                   <td valign="bottom" align=center width=60%>
-                     <h1><font color=#FFFFFF face="Century Gothic">SISTEMA DE CONTROL DE TRÁFICO INTELIGENTE</font></h1>
+                     <h1><font color=#FFFFFF face="Century Gothic">INTELLIGENT TRAFFIC CONTROL SYSTEM</font></h1>
              	    </td>
            	    </tr>
          	    </table>
            </td>
            <td valign="top" align=right >
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Nombre Usuario</u>:   ".$_SESSION["nombre"];?> </b></font><br>
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Tipo Usuario</u>:   ".$desc_tipo_usuario;?> </b></font><br>
-              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Cerrar Sesion </a></b></font></button>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Username</u>:   ".$_SESSION["nombre"];?> </b></font><br>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "User type</u>:   ".$desc_tipo_usuario;?> </b></font><br>
+              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Logout </a></b></font></button>
 
            </td>
 	     </tr>
@@ -58,7 +58,7 @@ include "menu_usuario.php";
                     bgcolor="#FFFFFF" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold">
-			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Actualizar datos</h1></b></font>
+			    <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Update data</h1></b></font>
 
 
 		       </td>
@@ -68,7 +68,7 @@ include "menu_usuario.php";
 <?php
 if ((isset($_POST["enviado"])))
   {
-   //echo "grabar cambios modificaci�n";
+   //echo "save changes modification";
    $id_usu_enc = $_POST["id_usu"];
    $nombre_usuario = $_POST["nombre_usuario"];
    $nombre_usuario = str_replace("�","n",$nombre_usuario);
@@ -153,10 +153,10 @@ else
                     <?php 
                        if ($mensaje == 1)
                          echo "<td bgcolor=#DDFFDD class=_espacio_celdas_p 					
-                    style=color: #000000; font-weight: bold >Usuario actualizado correctamente.";
+                    style=color: #000000; font-weight: bold >User updated successfully.";
                        if ($mensaje == 2)
                          echo "<td bgcolor=#FFDDDD class=_espacio_celdas_p 					
-                    style=color: #000000; font-weight: bold >Usuario no fue actualizado correctamente.";
+                    style=color: #000000; font-weight: bold >User was not updated correctly.";
 
              echo "</td></tr>
                   </table>
@@ -177,7 +177,7 @@ else
                    <table width=50% border=0 align=center>
 			    <tr>	
 				<td bgcolor="#D1E8FF" align=center> 
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Nombre</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Name</b></font>
 				</td>	
 				<td bgcolor="#EEEEEE" align=center> 
 				  <input type="text" name=nombre_usuario value="<?php echo $nombre_usuario; ?>" required>
@@ -185,7 +185,7 @@ else
 	     </tr>
 	     <tr>
 				<td bgcolor="#D1E8FF" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Apellido</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Last name</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
 				  <input type="text" name=apellido_usuario value="<?php echo $apellido_usuario; ?>" required>
@@ -202,7 +202,7 @@ else
 
 			  <tr>
 				<td bgcolor="#D1E8FF" align=center> 
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Usuario</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>User</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center> 
 				  <input type="text" name=login value="<?php echo $login; ?>" required>  
@@ -211,7 +211,7 @@ else
 
 			  <tr>
 				<td bgcolor="#D1E8FF" align=center> 
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Clave (dejar en blanco para no cambiar)</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Password (leave blank to not change)</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center> 
 				  <input type="password" name=password value="">  
@@ -220,14 +220,14 @@ else
 
 	     <tr>
 				<td bgcolor="#D1E8FF" align=center> 
-				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Activo (S/N)</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000044"> <b>Active (Y/N)</b></font>
 				</td>
 				<td bgcolor="#EEEEEE" align=center>
         <select name=activo required> 
            <option value="<?php echo $activo; ?>"> <?php echo $desc_activo; ?></option>
            <?php
            $activo_con = 1;
-           $desc_activo_con = "S (Activo)";
+           $desc_activo_con = "Y (Active)";
            if ($activo_con != $activo)
                {
            ?>

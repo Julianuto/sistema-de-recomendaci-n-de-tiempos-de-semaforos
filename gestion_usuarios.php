@@ -1,6 +1,6 @@
 <?php
 
-// PROGRAMA DE MENU ADMINISTRADOR
+// ADMINISTRATOR MENU PROGRAM
 include "conectar.php";
                                                  
 session_start();
@@ -20,7 +20,7 @@ else
      <html>
        <head>
        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-           <title>Gestion de usuarios</title>
+           <title>User Management</title>
         </head>
        <body>
         <table width="100%"  align=center cellpadding=5 border=0 bgcolor="#2E4053">
@@ -33,15 +33,15 @@ else
 
              	    </td>
                   <td valign="bottom" align=center width=60%>
-                     <h1><font color=#FFFFFF face="Century Gothic">SISTEMA DE CONTROL DE TRÁFICO INTELIGENTE</font></h1>
+                     <h1><font color=#FFFFFF face="Century Gothic">INTELLIGENT TRAFFIC CONTROL SYSTEM</font></h1>
              	    </td>
            	    </tr>
          	    </table>
            </td>
            <td valign="top" align=right >
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Nombre Usuario</u>:   ".$_SESSION["nombre"];?> </b></font><br>
-              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Tipo Usuario</u>:   ".$desc_tipo_usuario;?> </b></font><br>
-              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Cerrar Sesion </a></b></font></button>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "Username</u>:   ".$_SESSION["nombre"];?> </b></font><br>
+              <font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><?php  echo "User type</u>:   ".$desc_tipo_usuario;?> </b></font><br>
+              <button type="button"><font FACE="Century Gothic" SIZE=2 color="#FFFFFF"> <b><a href="cerrar_sesion.php"> Logout </a></b></font></button>
 
            </td>
 	     </tr>
@@ -55,7 +55,7 @@ include "menu_admin.php";
                     bgcolor="#FFFFFF" class="_espacio_celdas"
                     style="color: #FFFFFF;
 			             font-weight: bold">
-			            <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>Gestion de usuarios</h1></b></font>
+			            <font FACE="Century Gothic" SIZE=2 color="#000044" > <b><h1>User Management</h1></b></font>
 
 
 		         </td>
@@ -68,9 +68,9 @@ include "menu_admin.php";
         <form action="gestion_usuarios.php" method="POST" align=center>
           <tr>
            <td align=center >
-             <font FACE="Century Gothic" SIZE=2 color="#000000">Identificacion: <input type="number" name=id_con value=""></font>  &nbsp&nbsp&nbsp
+             <font FACE="Century Gothic" SIZE=2 color="#000000">ID: <input type="number" name=id_con value=""></font>  &nbsp&nbsp&nbsp
 
-             <font FACE="Century Gothic" SIZE=2 color="#000000">Nombre: <input type="text" name=nombre_con value=""></font>            &nbsp&nbsp&nbsp
+             <font FACE="Century Gothic" SIZE=2 color="#000000">Name: <input type="text" name=nombre_con value=""></font>            &nbsp&nbsp&nbsp
            </td>
           </tr>
 
@@ -78,7 +78,7 @@ include "menu_admin.php";
 
           <tr>
            <td width=50%>
-             <font FACE="Century Gothic" SIZE=2 color="#000000">Estado Usuario:
+             <font FACE="Century Gothic" SIZE=2 color="#000000">User state:
              <select name=estado>
              <?php
              if (isset($_POST["estado"]))
@@ -88,37 +88,37 @@ include "menu_admin.php";
                   {  
                     if ($estado == "2")
                      {
-                      echo "<option value=".$estado."> Todos los Usuarios</option>";
-                      echo "<option value=1> Usuarios solo Activos</option>";
-                      echo "<option value=0> Usuarios solo Inactivos</option>";
+                      echo "<option value=".$estado."> All Users </option>";
+                      echo "<option value=1> Active Users </option>";
+                      echo "<option value=0> Inactive Users </option>";
                      }
                     else if ($estado == "1")
                      {
-                      echo "<option value=".$estado."> Usuarios solo Activos</option>";
-                      echo "<option value=2> Todos los Usuarios</option>";
-                      echo "<option value=0> Usuarios solo Inactivos</option>";
+                      echo "<option value=".$estado."> Active Users</option>";
+                      echo "<option value=2> All Users</option>";
+                      echo "<option value=0> Inactive Users</option>";
                      }
                     else if ($estado == "0")
                      { 
-                      echo "<option value=".$estado."> Usuarios solo Inactivos</option>";
-                      echo "<option value=2> Todos los Usuarios</option>";
-                      echo "<option value=1> Usuarios solo Activos</option>";
+                      echo "<option value=".$estado."> Inactive Users </option>";
+                      echo "<option value=2> All Users </option>";
+                      echo "<option value=1> Active Users </option>";
                      }
                   }  
                }
               else
                {
                  ?>
-                  <option value=2> Todos los Usuarios</option>
-                  <option value=1> Usuarios solo Activos </option>
-                  <option value=0> Usuarios solo Inactivos &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                  <option value=2> All Users </option>
+                  <option value=1> Active Users </option>
+                  <option value=0> Inactive Users &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
               <?php
                }
               ?>  
               </select> &nbsp&nbsp&nbsp
 
            <td align=center width=50%>
-             <font FACE="Century Gothic" SIZE=2 color="#000000"><input type="submit" name=Consultar value="Consultar"></font>      <br>
+             <font FACE="Century Gothic" SIZE=2 color="#000000"><input type="submit" name="Consultar" value="Consultar"></font>      <br>
            </td>
           </tr> </td>   <br>
 
@@ -143,19 +143,19 @@ include "menu_admin.php";
                     <?php 
                        if ($mensaje == 1)
                          echo "<td bgcolor=#DDFFDD class=_espacio_celdas_p 					
-                    style=color: #000000; font-weight: bold >Usuario actualizado correctamente.";
+                    style=color: #000000; font-weight: bold >User updated successfully.";
                        if ($mensaje == 2)
                          echo "<td bgcolor=#FFDDDD class=_espacio_celdas_p 					
-                    style=color: #000000; font-weight: bold >Usuario no fue actualizado correctamente.";
+                    style=color: #000000; font-weight: bold >User was not updated correctly.";
                        if ($mensaje == 3)
                          echo "<td bgcolor=#DDFFDD class=_espacio_celdas_p 					
-                    style=color: #000000; font-weight: bold >Usuario creado correctamente.";
+                    style=color: #000000; font-weight: bold >User created successfully.";
                        if ($mensaje == 4)
                          echo "<td bgcolor=#FFDDDD class=_espacio_celdas_p 					
-                    style=color: #000000; font-weight: bold >Usuario no fue creado. Se present� un inconveniente";
+                    style=color: #000000; font-weight: bold >User was not created. An issue occurred";
                        if ($mensaje == 5)
                          echo "<td bgcolor=#FFDDDD class=_espacio_celdas_p 					
-                    style=color: #000000; font-weight: bold >Usuario no fue creado. Ya existe usuario con la misma c�dula.";
+                    style=color: #000000; font-weight: bold >User was not created. There is already a user with the same ID.";
 
              echo "</td></tr>
                   </table>
@@ -175,25 +175,25 @@ include "menu_admin.php";
      <table width=80% border=0 align=center>
 			 <tr>	
 				<td bgcolor="#F4B120" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>Nombre</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>Name</b></font>
 				</td>	
 				<td bgcolor="#F4B120" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>Apellido</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>Last name</b></font>
 				</td> 	
 				<td bgcolor="#F4B120" align=center>
 				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>ID</b></font>
 				</td> 	
 				<td bgcolor="#F4B120" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>Usuario</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>User</b></font>
 				</td>
 				<td bgcolor="#F4B120" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>Tipo de usuario</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>User type</b></font>
 				</td>
 				<td bgcolor="#F4B120" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>Activo (S/N)</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>Active (Y/N)</b></font>
 				</td>
    	    <td bgcolor="#F4B120" align=center>
-				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>Modificar</b></font>
+				  <font FACE="Century Gothic" SIZE=2 color="#000000"> <b>Modify</b></font>
 				</td>
 			</tr>
 				  
@@ -290,7 +290,7 @@ include "menu_admin.php";
 
                        <tr>
       <td align=center>
-      <button><a href="gestion_usuarios_add.php"> <font face="Century Gothic" SIZE=2><b>Agregar nuevo usuario </b></a> </font></button>
+      <button><a href="gestion_usuarios_add.php"> <font face="Century Gothic" SIZE=2><b> Add new user </b></a> </font></button>
       </td>
       </tr>
                    </table>

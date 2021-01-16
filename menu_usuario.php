@@ -16,7 +16,7 @@ echo '
                    <a href="tabla_recomendacion.php"><img src="../img/algoritmo.png" border=0 width=40 height=40></a>
 
 		             <hr>
-			           </td>
-		      </tr>
+		</td>
+	      </tr>
 ';
 ?>

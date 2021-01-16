@@ -19,7 +19,7 @@ else
      <html>
        <head>
           <link rel="stylesheet" href="css/estilos_virtual.css" 			type="text/css">
-           <title>Crossing management</title>
+           <title>User management</title>
         </head>
        <body>
         <table width="100%" align=center cellpadding=5 border=0 bgcolor="#2E4053">

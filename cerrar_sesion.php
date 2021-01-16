@@ -1,7 +1,7 @@
                                                        
 <?php
 
-// PROGRAMA DE FINALIZACION DE SESION
+// SESSION TERMINATION PROGRAM
                    
   session_start();
   unset($_SESSION["nombre"]);
